@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 //테이블의 스키마를 정의 하고 exports함
 
