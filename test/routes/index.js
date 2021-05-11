@@ -8,20 +8,24 @@ router.get("/login", (req, res) => res.render("login", {page: "login"}));
 router.get("/signup", (req, res) => res.render("signup", {page: "signup"}));
 
 router.post("/signup", (req, res) => {
-  const user = new User({
-               _id: new mongoose.Types.ObjectId(),
-               userid: req.body.userid ,
-               password: req.body.password
-           });
-   user.save()
-       .then(result => {
-             console.log(result);
-             res.redirect("/");
-             })
-       .catch(err => {
-             console.log(err);
-             });
-         });
+
+          const user = new User({
+                       _id: new mongoose.Types.ObjectId(),
+                       userid: req.body.userid ,
+                       password: req.body.password,
+                       name : req.body.name,
+                       email : req.body.email
+                   });
+           user.save()
+               .then(result => {
+                     console.log(result);
+                     res.redirect("/");
+                     })
+               .catch(err => {
+                     console.log(err);
+                     });
+        });
+
 
 
 
